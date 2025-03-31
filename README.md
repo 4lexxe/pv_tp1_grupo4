@@ -1,7 +1,6 @@
-echo "# pv_tp1_grupo4" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/4lexxe/pv_tp1_grupo4.git
-git push -u origin main
+# pv_tp1_grupo4
+Desarrolo trabajo práctico n° 1
+
+## lista de integrantes del grupo 4
+
+1. Snopek Carlos Augusto - usuario: SnopekCarlos
