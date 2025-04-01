@@ -8,3 +8,4 @@ Desarrolo trabajo práctico n° 1
 2. Eduardo Tiago Rodriguez - usuario: EduardTr48
 3. Rodriguez Pablo Alejandro - usuario: PabloRZ-AL
 4. Calatayud Alex Gabriel - usuario: 4lexxe
+5. Herrera Nicolás Efraín - usuario: Dredigo
