@@ -10,7 +10,7 @@ a{
     text-decoration: none;
 }
 
-div{
+.contenedor{
     max-width: 800px;
     margin: 0 auto;
     height: 100vh;
@@ -27,4 +27,12 @@ footer{
 h1{
     margin-top: 0;
     text-align: center;
+}
+
+.campo{
+    padding: 12px 4px;
+}
+
+.campo label{
+    display: block;
 }
