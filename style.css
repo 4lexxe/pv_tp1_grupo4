@@ -4,17 +4,14 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
 }
-.box {
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Sombra con desenfoque */
-}
 a{
     color: white;
     text-decoration: none;
 }
-
+.box {
+    background-color: rgb(44, 185, 228);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Sombra con desenfoque */
+}
 .contenedor{
     max-width: 800px;
     margin: 0 auto;
