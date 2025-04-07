@@ -19,14 +19,24 @@ a{
 }
 
 footer{
-    position: absolute;
     bottom: 0;
+    display: block;
     text-align: center;
 }
 
 h1{
     margin-top: 0;
     text-align: center;
+}
+
+.contenedor-imagen{
+    display: flex;
+    justify-content: center;
+}
+
+.imagen{
+    width: 400px;
+    height: 200px;
 }
 
 .campo{
