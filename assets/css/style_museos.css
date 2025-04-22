@@ -1,104 +1,9 @@
 /* Importar estilos base */
 @import "style.css";
 
-/* Fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-/* Paleta y variables dark glass/electron */
-:root {
-  --color-bg: #191b25;
-  --color-surface: rgba(44,52,78,0.85);
-  --color-card: rgba(35,41,70,0.93);
-  --color-primary: #eebbc3;
-  --color-secondary: #b8c1ec;
-  --color-accent: #f6c177;
-  --color-navbar: #262638;
-  --color-footer: #23203e;
-  --color-text: #f1f1f1;
-  --color-link-hover: #eebbc3;
-  --shadow: 0 8px 30px -4px rgba(0,0,0,0.4);
-  --radius-lg: 14px;
-  --radius-md: 10px;
-  --radius-sm: 5px;
-}
-
-/* Base */
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
-  margin: 0;
-  min-height: 100vh;
-}
-
-.museo-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 0.5s;
-}
-
-/* HEADER */
-.museo-header {
-  margin-bottom: 1.2rem;
-  margin-top: 0.3rem;
-}
-
-.museo-title {
-  background: var(--color-primary);
-  color: var(--color-navbar);
-  text-shadow: 0 3px 8px rgba(0,0,0,0.09);
-  padding: 0.9em 0;
-  margin: 0 auto 1rem auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow);
-  max-width: 1320px; /* Mismo ancho que .museo-layout */
-  width: 98%; /* Mismo ancho que .museo-layout */
-  font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 2.5px;
-  text-align: center;
-}
-
-.museo-navbar {
-  background: var(--color-navbar);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 12px -2px rgba(0,0,0,0.23);
-  max-width: 1320px; /* Mismo ancho que .museo-layout */
-  width: 98%; /* Mismo ancho que .museo-layout */
-  margin: 0 auto 0.8rem auto;
-  padding: 0.6em 0;
-}
-
-.navbar-list {
-  display: flex;
-  justify-content: center;
-  gap: 2.3rem;
-  list-style: none;
-  margin: 0; padding: 0;
-}
-
-.navbar-link {
-  color: var(--color-secondary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.13rem;
-  letter-spacing: 1px;
-  padding: 0.42rem 1.2rem;
-  border-radius: var(--radius-sm);
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  display: inline-block;
-}
-
-.navbar-link:hover,
-.navbar-link:focus {
-  background-color: var(--color-accent);
-  color: var(--color-navbar);
-  transform: translateY(-2px) scale(1.06);
-}
-
 /* MAIN LAYOUT GRID */
 .museo-layout {
+  /* Extensión del grid-layout genérico */
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2.2rem;
@@ -126,6 +31,7 @@ body {
 }
 
 .museos-destacados {
+  /* Extiende highlight-list */
   display: flex;
   justify-content: space-around;
   gap: 1.4rem;
@@ -163,8 +69,8 @@ body {
   transform: scale(1.13);
 }
 .museo-nombre {
-  color: var(--color-secondary);
   font-weight: 600;
+  color: var(--color-secondary);
 }
 
 .museum-details {
@@ -174,6 +80,7 @@ body {
 }
 
 .museum-card {
+  /* Usa la clase base card con algunos ajustes */
   background: var(--color-card);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -208,6 +115,7 @@ body {
 }
 
 .museum-image-container {
+  /* Extensión de contenedor-imagen */
   margin: 1.1rem 0 .7rem 0;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -236,6 +144,7 @@ body {
 }
 
 .sidebar-section {
+  /* Similar a card pero con diferencias */
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -246,7 +155,6 @@ body {
 
 .sidebar-section:hover {
   transform: translateY(-2.5px) scale(1.017);
-  box-shadow: 0 8px 24px -2px #131e2a78, 0 2px 10px #222;
 }
 
 .sidebar-section h2 {
