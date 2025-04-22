@@ -1,117 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museos</title>
-    <link rel="stylesheet" href="assets/css/style_museos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museos de Jujuy (Modo Oscuro)</title>
+  <link rel="stylesheet" href="assets/css/style_museos.css">
 </head>
 <body>
-    <!-- Encabezado principal -->
-    <header>
-        <h1 class="box">Museos</h1>
-        <nav class="navbar">
-            <ul class="navbar-list">
-                <li class="navbar-item"><a href="index.html" class="navbar-link">Inicio</a></li>
-                <li class="navbar-item"><a href="sobre-nosotros.html" class="navbar-link">Nosotros</a></li>
-                <li class="navbar-item"><a href="contacto.html" class="navbar-link">Contacto</a></li>
-            </ul>
-        </nav>
+  <div class="museo-container">
+    <header class="museo-header">
+      <h1 class="museo-title">Museos de Jujuy</h1>
+      <nav class="museo-navbar">
+        <ul class="navbar-list">
+          <li><a href="#" class="navbar-link">Inicio</a></li>
+          <li><a href="#" class="navbar-link">Nosotros</a></li>
+          <li><a href="#" class="navbar-link">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
-    <main class="contenedor">
-        <section>
-            <h2>Museos destacados de Jujuy</h2>
-            <ul class="museos-destacados">
-                <li>
-                    <span class="museo-icon">🏛️</span>
-                    <span class="museo-nombre">Cabildo de Jujuy</span>
-                </li>
-                <li>
-                    <span class="museo-icon">🏺</span>
-                    <span class="museo-nombre">Museo Histórico Provincial Juan Galo Lavalle</span>
-                </li>
-                <li>
-                    <span class="museo-icon">🗿</span>
-                    <span class="museo-nombre">Museo Arqueológico Provincial</span>
-                </li>
-            </ul>
+    <main class="museo-layout">
+      <!-- Columna principal -->
+      <section class="museo-main">
+        <section class="featured-section">
+          <h2>Museos destacados de Jujuy</h2>
+          <ul class="museos-destacados">
+            <li>
+              <span class="museo-icon">🏛️</span>
+              <span class="museo-nombre">Cabildo de Jujuy</span>
+            </li>
+            <li>
+              <span class="museo-icon">🏺</span>
+              <span class="museo-nombre">Museo Lavalle</span>
+            </li>
+            <li>
+              <span class="museo-icon">🗿</span>
+              <span class="museo-nombre">Museo Arqueológico</span>
+            </li>
+          </ul>
         </section>
-        <section>
-            <article>
-                <h2>Cabildo de Jujuy</h2>
-                <div class="contenedor-imagen">
-                    <img class="imagen" src="assets/img/cabildo.png" alt="Cabildo de Jujuy">
-                </div>
-                <p>
-                    El Cabildo de Jujuy es uno de los edificios más representativos e históricos de la ciudad de San Salvador de Jujuy por su valor arquitectónico y patrimonial. Fue declarado Monumento Histórico Nacional por el Decreto 95.687/1941. Se encuentra ubicado en la esquina de las calles Belgrano y Sarmiento. En este edificio se firmó la histórica declaración de la independencia de la provincia y se llevaron a cabo importantes acontecimientos políticos y sociales.
-                </p>
-            </article>
-            <article>
-                <h2>Museo Histórico Provincial Juan Galo Lavalle</h2>
-                <div class="contenedor-imagen">
-                    <img class="imagen" src="assets/img/P1000684.jpg" alt="Museo Histórico Provincial Juan Galo Lavalle">
-                </div>
-                <p>
-                    Este museo funciona en una casona colonial del siglo XVIII y alberga una valiosa colección de objetos históricos, documentos y mobiliario de la época. Es un espacio dedicado a la memoria de la provincia y a la difusión de su historia, con salas temáticas y exposiciones temporales.
-                </p>
-            </article>
-            <article>
-                <h2>Museo Arqueológico Provincial</h2>
-                <div class="contenedor-imagen">
-                    <img class="imagen" src="assets/img/obispado-de-jujuy.jpg" alt="Museo Arqueológico Provincial">
-                </div>
-                <p>
-                    El museo exhibe piezas arqueológicas que datan de miles de años, pertenecientes a las culturas originarias de la región. Entre sus colecciones destacan cerámicas, textiles, herramientas y restos óseos que permiten conocer la vida y costumbres de los pueblos prehispánicos de Jujuy.
-                </p>
-            </article>
-        </section>
-        <section>
-            <h2>Horarios de visita</h2>
-            <table class="tabla-horarios">
-                <thead>
-                    <tr>
-                        <th>Museo</th>
-                        <th>Días</th>
-                        <th>Horario</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cabildo de Jujuy</td>
-                        <td>Lunes a Viernes</td>
-                        <td>9:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Museo Lavalle</td>
-                        <td>Martes a Sábado</td>
-                        <td>10:00 - 17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Museo Arqueológico</td>
-                        <td>Miércoles a Domingo</td>
-                        <td>11:00 - 19:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <aside>
-            <h2>¿Sabías qué?</h2>
-            <p>
-                Muchos museos de Jujuy ofrecen visitas guiadas gratuitas y actividades educativas para escuelas y turistas.
-            </p>
-            <div style="display: flex; justify-content: center;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/vicmZfYu41w?si=rrd0hV-2BTDY8_3J&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <section class="museum-details">
+          <article class="museum-card">
+            <h2>Cabildo de Jujuy</h2>
+            <div class="museum-image-container">
+              <img class="museum-image" src="assets/img/cabildo.png" alt="Cabildo de Jujuy">
             </div>
-        </aside>
-        <section>
-            <h2>Importancia de los Museos en Jujuy</h2>
             <p>
-                Los museos de Jujuy cumplen un rol fundamental en la preservación de la identidad cultural, la educación y la promoción del turismo. Son espacios de encuentro, aprendizaje y reflexión sobre el pasado y el presente de la provincia, abiertos a toda la comunidad y a los visitantes.
+              El Cabildo de Jujuy es uno de los edificios más representativos e históricos de la ciudad de San Salvador de Jujuy por su valor arquitectónico y patrimonial. Fue declarado Monumento Histórico Nacional por el Decreto 95.687/1941...
             </p>
+          </article>
+          <article class="museum-card">
+            <h2>Museo Histórico Provincial Juan Galo Lavalle</h2>
+            <div class="museum-image-container">
+              <img class="museum-image" src="assets/img/P1000684.jpg" alt="Museo Histórico Provincial Juan Galo Lavalle">
+            </div>
+            <p>
+              Este museo funciona en una casona colonial del siglo XVIII y alberga una valiosa colección de objetos históricos, documentos y mobiliario de la época...
+            </p>
+          </article>
+          <article class="museum-card">
+            <h2>Museo Arqueológico Provincial</h2>
+            <div class="museum-image-container">
+              <img class="museum-image" src="assets/img/obispado-de-jujuy.jpg" alt="Museo Arqueológico Provincial">
+            </div>
+            <p>
+              El museo exhibe piezas arqueológicas que datan de miles de años, pertenecientes a las culturas originarias de la región...
+            </p>
+          </article>
         </section>
+      </section>
+
+      <!-- Sidebar lateral -->
+      <aside class="museo-sidebar">
+        <section class="sidebar-section">
+          <h2>Horarios de visita</h2>
+          <div class="schedule-table-container">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Museo</th>
+                  <th>Días</th>
+                  <th>Horario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cabildo de Jujuy</td>
+                  <td>Lunes a Viernes</td>
+                  <td>9:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Museo Lavalle</td>
+                  <td>Martes a Sábado</td>
+                  <td>10:00 - 17:00</td>
+                </tr>
+                <tr>
+                  <td>Museo Arqueológico</td>
+                  <td>Miércoles a Domingo</td>
+                  <td>11:00 - 19:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="sidebar-section info-box">
+          <h2>¿Sabías qué?</h2>
+          <p>
+            Muchos museos de Jujuy ofrecen visitas guiadas gratuitas y actividades educativas para escuelas y turistas.
+          </p>
+        </section>
+        <section class="sidebar-section">
+          <h2>Video</h2>
+          <div class="video-container">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vicmZfYu41w?si=rrd0hV-2BTDY8_3J&vq=hd1080" title="Museos en Jujuy" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </section>
+        <section class="sidebar-section">
+          <h2>Importancia</h2>
+          <p>
+            Los museos de Jujuy cumplen un rol fundamental en la preservación de la identidad cultural, la educación y la promoción del turismo...
+          </p>
+        </section>
+      </aside>
     </main>
-    <footer>
-        Todos los derechos reservados &copy; 2025
+    <footer class="museo-footer">
+      <p>Todos los derechos reservados &copy; 2025</p>
     </footer>
+  </div>
 </body>
 </html>
