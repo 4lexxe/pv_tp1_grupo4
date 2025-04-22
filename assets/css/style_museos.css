@@ -180,6 +180,43 @@ p {
     letter-spacing: 1px;
 }
 
+.tabla-horarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    background: rgba(184, 193, 236, 0.10);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.tabla-horarios th,
+.tabla-horarios td {
+    padding: 1em 0.7em;
+    text-align: center;
+}
+
+.tabla-horarios th {
+    background: var(--color-secondary);
+    color: var(--color-navbar);
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.tabla-horarios tr:nth-child(even) {
+    background: rgba(238, 187, 195, 0.09);
+}
+
+.tabla-horarios tr:nth-child(odd) {
+    background: rgba(255,255,255,0.03);
+}
+
+.tabla-horarios td {
+    color: var(--color-text);
+    font-size: 1em;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .contenedor {
@@ -195,6 +232,14 @@ p {
     }
     section {
         padding: 0.7em 0.5em;
+    }
+}
+
+@media (max-width: 700px) {
+    .tabla-horarios th,
+    .tabla-horarios td {
+        padding: 0.6em 0.3em;
+        font-size: 0.98em;
     }
 }
 
