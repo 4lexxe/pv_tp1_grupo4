@@ -138,6 +138,49 @@ p {
     color: var(--color-text);
 }
 
+.museos-destacados {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 2em;
+    list-style: none;
+    padding: 1.2em 0;
+    margin: 1em 0 2em 0;
+    background: rgba(184, 193, 236, 0.13);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.museos-destacados li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+    padding: 1em 0.5em;
+    border-radius: 10px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.museos-destacados li:hover {
+    background: rgba(246, 193, 119, 0.13);
+    transform: translateY(-4px) scale(1.04);
+}
+
+.museo-icon {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.museo-nombre {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
     .contenedor {
         padding: 0.5em;
@@ -151,6 +194,17 @@ p {
         gap: 1em;
     }
     section {
+        padding: 0.7em 0.5em;
+    }
+}
+
+@media (max-width: 900px) {
+    .museos-destacados {
+        flex-direction: column;
+        gap: 1em;
+        padding: 0.5em 0;
+    }
+    .museos-destacados li {
         padding: 0.7em 0.5em;
     }
 }
