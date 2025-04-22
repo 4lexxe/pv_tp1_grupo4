@@ -13,11 +13,50 @@ a{
     text-decoration: none;
 }
 
+.navbar {
+    background-color: #2980b9;
+    padding: 0.5em 0;
+    margin-bottom: 2em;
+}
 
-footer{
-    position: absolute;
-    bottom: 0;
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    /* Opcional: espacio para personalización futura */
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    background-color: #1abc9c;
+    color: #222;
+}
+
+footer {
+    background-color: #2980b9;
+    color: #fff;
+    width: 100%;
     text-align: center;
+    padding: 1em 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    margin-top: 2em;
 }
 
 h1{
@@ -28,7 +67,6 @@ h1{
 .contenedor{
     max-width: 800px;
     margin: 0 auto;
-    height: 100vh;
     position: relative;
-
+    padding-bottom: 3em; /* Espacio para el footer */
 }
