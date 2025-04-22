@@ -1,50 +1,110 @@
-body{
-    background-color: darkslategray;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Paleta y variables globales */
+:root {
+  --color-bg: #191b25;
+  --color-surface: rgba(44,52,78,0.85);
+  --color-card: rgba(35,41,70,0.93);
+  --color-primary: #eebbc3;
+  --color-secondary: #b8c1ec;
+  --color-accent: #f6c177;
+  --color-navbar: #262638;
+  --color-footer: #23203e;
+  --color-text: #f1f1f1;
+  --color-link-hover: #eebbc3;
+  --shadow: 0 8px 30px -4px rgba(0,0,0,0.4);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 5px;
 }
-a{
-    color: white;
-    text-decoration: none;
+
+/* Estilos base */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
 }
+
+/* Enlaces generales */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent);
+}
+
+/* Textos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-accent);
+  margin-top: 0;
+  letter-spacing: 1.1px;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Componentes base */
 .box {
-    background-color: rgb(44, 185, 228);
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Sombra con desenfoque */
-}
-.contenedor{
-    max-width: 800px;
-    margin: 0 auto;
-    height: 100vh;
-    position: relative;
-
+  background-color: var(--color-primary);
+  color: var(--color-navbar);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-md);
+  padding: 1rem;
 }
 
-footer{
-    bottom: 0;
-    display: block;
-    text-align: center;
+/* Footer base */
+footer {
+  margin-top: auto;
+  background: var(--color-footer);
+  color: var(--color-primary);
+  width: 100%;
+  padding: 1.25rem 0;
+  text-align: center;
+  box-shadow: 0 -3px 17px rgba(30,25,38,0.3);
+  letter-spacing: 1px;
 }
 
-h1{
-    margin-top: 0;
-    text-align: center;
+/* Componente contenedor básico */
+.contenedor {
+  max-width: 1320px;
+  width: 98%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.contenedor-imagen{
-    display: flex;
-    justify-content: center;
+/* Animaciones globales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
-.imagen{
-    width: 400px;
-    height: 200px;
+/* Utilidades de imagen */
+.contenedor-imagen {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
-.campo{
-    padding: 12px 4px;
+.imagen {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.14);
 }
 
-.campo label{
-    display: block;
+/* Media queries globales */
+@media (max-width: 700px) {
+  .contenedor {
+    width: 95%;
+    padding: 0.5rem;
+  }
 }
