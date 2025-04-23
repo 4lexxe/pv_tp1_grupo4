@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museos de Jujuy</title>
+    <title>Museos de Jujuy - Contacto</title>
     <link rel="stylesheet" href="assets/css/style_museos.css">
+    <link rel="stylesheet" href="assets/css/contacto.css">
 </head>
 <body>
     <div class="museo-container">
@@ -12,40 +13,86 @@
             <h1 class="museo-title">Museos de Jujuy</h1>
             <nav class="museo-navbar">
               <ul class="navbar-list">
-                <li><a href="#" class="navbar-link">Inicio</a></li>
+                <li><a href="index.html" class="navbar-link">Inicio</a></li>
                 <li><a href="#" class="navbar-link">Nosotros</a></li>
-                <li><a href="#" class="navbar-link">Contacto</a></li>
+                <li><a href="contacto.html" class="navbar-link">Contacto</a></li>
               </ul>
             </nav>
           </header>
-        <main>
-            <h2>Contactenos</h2>
+        <main class="museo-layout">
+          <!-- Columna principal con formulario -->
+          <div class="museo-main">
+            <section class="featured-section">
+              <h2>Contáctenos</h2>
+              <form id="formulario-contacto" class="contacto-form" action="#" method="POST">
+                <div class="form-group">
+                  <label for="nombre" class="form-label">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" class="form-input" required 
+                         pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}" 
+                         placeholder="Ingrese su nombre completo"
+                         title="Ingrese un nombre válido (solo letras y espacios)">
+                  <span class="error-message"></span>
+                </div>
 
-            <form action="">
-                    <div class="campo">
-                        <label for="nombre">Nombre</label>
-                        <input type="text">
-                    </div>
-                    <div class="campo">
-                        <label for="correo">Correo</label>
-                        <input type="text">
-                    </div>
-                    <div class="campo">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea name="mensaje" id="mensaje">
-                        </textarea>
-                    </div>
-                
-                    <div class="campo">
-                        <input type="submit" value="Contactar">
+                <div class="form-group">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" id="email" name="email" class="form-input" required
+                         placeholder="ejemplo@correo.com">
+                  <span class="error-message"></span>
+                </div>
 
-                    </div>
-               
-            </form>
+                <div class="form-group">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" class="form-input" 
+                         pattern="[0-9]{10,15}" 
+                         placeholder="Ej. 3884123456"
+                         title="Ingrese un número de teléfono válido">
+                  <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" class="form-textarea" required 
+                            minlength="10" maxlength="500"
+                            placeholder="Escriba su consulta aquí..."></textarea>
+                  <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <!-- Sidebar lateral -->
+          <aside class="museo-sidebar">
+            <section class="sidebar-section">
+              <h2>Información de contacto</h2>
+              <p>Puede contactarnos a través de los siguientes medios:</p>
+              <ul class="contacto-info">
+                <li><strong>Teléfono:</strong> (388) 123-4567</li>
+                <li><strong>Email:</strong> info@museosjujuy.gob.ar</li>
+                <li><strong>Dirección:</strong> Calle San Martín 450, San Salvador de Jujuy</li>
+              </ul>
+            </section>
+            
+            <section class="sidebar-section info-box">
+              <h2>Horario de atención</h2>
+              <p>Nuestras oficinas atienden de lunes a viernes de 9:00 a 17:00 hs.</p>
+            </section>
+            
+            <section class="sidebar-section">
+              <h2>Ubicación</h2>
+              <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.3169833348887!2d-65.30246662391624!3d-24.18572548984701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f285e1dab59%3A0xbf3f70bb553c9300!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1715651424483!5m2!1ses!2sar" style="width: 100%; height: 100%; border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </section>
+          </aside>
         </main>
-
-        <footer>
-            Todos los derechos reservados 2025 &copy
+        <footer class="museo-footer">
+          <p>Todos los derechos reservados &copy; 2025</p>
         </footer>
     </div>
 </body>
+</html>
