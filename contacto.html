@@ -6,8 +6,52 @@
     <meta name="description" content="Contacto con Museos de Jujuy. Formulario de contacto e información.">
     <meta name="keywords" content="museos, Jujuy, contacto, formulario, información, ubicación">
     <title>Museos de Jujuy - Contacto</title>
+    <!-- 
+      Estrategia de aplicación de estilos CSS:
+      1. Estilos externos generales (style.css, style_museos.css) - Diseño global del sitio
+      2. Estilos externos específicos (contacto.css) - Funcionalidad específica de la página
+      3. Estilos internos (sección style) - Mejoras visuales y animaciones específicas
+      4. Estilos inline - Solo para atributos dinámicos o críticos para el renderizado
+    -->
     <link rel="stylesheet" href="assets/css/style_museos.css">
     <link rel="stylesheet" href="assets/css/contacto.css">
+    <!-- Estilos internos para componentes específicos de esta página -->
+    <style>
+      /* Variables específicas para esta página */
+      :root {
+        --color-required: #ff7b54;
+        --transition-speed: 0.3s;
+      }
+
+      /* Mejoras visuales específicas para esta página */
+      .featured-section {
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      .contacto-form fieldset:hover,
+      .sidebar-section:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Estilos específicos para interactividad de FAQ */
+      @media (hover: hover) {
+        .faq-question:hover {
+          background-color: rgba(184, 193, 236, 0.15);
+          transform: translateX(5px);
+        }
+      }
+
+      /* Animación de pulso para el botón enviar */
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .btn-enviar:hover {
+        animation: pulse 1.5s infinite;
+      }
+    </style>
 </head>
 <body>
     <div class="museo-container">

@@ -1,5 +1,16 @@
 /* Estilos del formulario de contacto que extienden style_museos.css */
 
+/*******************************
+ * TABLA DE CONTENIDOS
+ * 1. Elementos comunes y tipografía
+ * 2. Formulario y sus componentes
+ * 3. Estilos para preguntas frecuentes
+ * 4. Barra lateral y componentes
+ * 5. Media queries y responsividad
+ *******************************/
+
+/* ====== 1. ELEMENTOS COMUNES Y TIPOGRAFÍA ====== */
+
 /* Título de la sección de contacto */
 .contacto-heading {
   text-align: center;
@@ -9,100 +20,41 @@
   letter-spacing: 1px;
 }
 
-/* Contenedor del mapa */
-.map-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  box-shadow: 0 3px 16px -2px #10141b5e;
-  margin-top: 0.6rem;
-}
-
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: var(--radius-md);
-}
-
-/* Personalización de las secciones de la barra lateral */
-.sidebar-section {
-  border: 1px solid rgba(184, 193, 236, 0.2);
-  background-color: rgba(35, 41, 70, 0.3);
-  padding: 1.2rem;
-}
-
-.sidebar-section h2 {
+/* Texto introductorio del formulario */
+.intro-contacto {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-primary);
   text-align: center;
-  margin-bottom: 1rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policy-link {
   color: var(--color-accent);
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(184, 193, 236, 0.2);
-}
-
-.sidebar-section.info-box {
-  border-left: 4px solid var(--color-accent);
-}
-
-/* Lista de información de contacto */
-.contacto-info {
-  list-style: none;
-  padding: 0;
-  margin: 0.7rem 0;
-}
-
-.contacto-info ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-.contacto-info li {
-  padding: 0.7rem 0;
-  border-bottom: 1px solid rgba(184, 193, 236, 0.2);
-}
-
-.contacto-info li:last-child {
-  border-bottom: none;
-}
-
-.contacto-info strong {
-  color: var(--color-accent);
-  margin-right: 0.5rem;
-}
-
-.contacto-info a {
-  color: var(--color-secondary);
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s;
 }
 
-.contacto-info a:hover {
+.policy-link:hover {
   color: var(--color-primary);
-  text-decoration: underline;
 }
 
-/* Fieldset personalizado */
-fieldset {
-  border: 1px solid rgba(184, 193, 236, 0.2);
-  margin: 0 0 1.2rem 0;
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  background-color: rgba(35, 41, 70, 0.3);
+/* Clase de ayuda para accesibilidad */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-legend {
-  padding: 0 0.5rem;
-  margin-left: 0.5rem;
-  color: var(--color-secondary);
-  font-weight: 600;
-}
+/* ====== 2. FORMULARIO Y SUS COMPONENTES ====== */
 
 /* Formulario de contacto */
 .contacto-form {
@@ -114,7 +66,7 @@ legend {
 
 /* Indicadores de campos requeridos */
 .required-field {
-  color: #ff7b54;
+  color: var(--color-required, #ff7b54);
   margin-left: 0.2rem;
   font-weight: bold;
 }
@@ -127,17 +79,10 @@ legend {
   background-color: rgba(35, 41, 70, 0.3);
   padding: 0.5rem;
   border-radius: var(--radius-sm);
-  border-left: 3px solid #ff7b54;
+  border-left: 3px solid var(--color-required, #ff7b54);
 }
 
-.character-count {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--color-secondary);
-  text-align: right;
-  margin-top: 0.3rem;
-}
-
+/* Grupos de campos */
 .form-group {
   margin-bottom: 1rem;
   position: relative;
@@ -181,14 +126,15 @@ legend {
   resize: vertical;
 }
 
-.error-message {
-  display: none;
-  color: #e74c3c;
+.character-count {
+  display: block;
   font-size: 0.8rem;
+  color: var(--color-secondary);
+  text-align: right;
   margin-top: 0.3rem;
-  padding-left: 0.3rem;
 }
 
+/* Botón de envío */
 .btn-enviar {
   background-color: var(--color-accent);
   color: var(--color-navbar);
@@ -217,6 +163,32 @@ legend {
   transform: translateY(-1px);
 }
 
+/* Fieldsets personalizados */
+fieldset {
+  border: 1px solid rgba(184, 193, 236, 0.2);
+  margin: 0 0 1.2rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(35, 41, 70, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+legend {
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Mensajes de error */
+.error-message {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  padding-left: 0.3rem;
+}
+
 /* Estilos para validación */
 .form-input:invalid,
 .form-textarea:invalid {
@@ -228,7 +200,9 @@ legend {
   border-color: #2ecc71;
 }
 
-/* Estilos para las FAQ */
+/* ====== 3. ESTILOS PARA PREGUNTAS FRECUENTES ====== */
+
+/* Sección de FAQ */
 .faq-section {
   margin-top: 2rem;
   padding: 1.5rem;
@@ -268,17 +242,11 @@ legend {
   padding: 0.5rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed, 0.3s) ease;
   border-radius: var(--radius-sm);
   position: relative;
   padding-right: 1.5rem;
   margin-bottom: 0.5rem;
-}
-
-.faq-question:hover {
-  background-color: rgba(184, 193, 236, 0.1);
-  color: var(--color-accent);
-  padding-left: 0.8rem;
 }
 
 .faq-question::after {
@@ -289,7 +257,7 @@ legend {
   transform: translateY(-50%);
   font-size: 1.2rem;
   color: var(--color-accent);
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed, 0.3s) ease;
 }
 
 .faq-cerrar::after {
@@ -368,7 +336,7 @@ legend {
 
 /* Funciones para mostrar las respuestas en la zona superior */
 /* Estas reglas CSS utilizan el selector :has() que no es compatible con todos los navegadores */
-/* Se agregan alternativas mediante JavaScript más adelante */
+/* Se agregan alternativas mediante JavaScript para compatibilidad */
 
 @supports (selector(:has(*))) {
   body:has(#faq1:checked) #faq-respuestas {
@@ -392,54 +360,90 @@ legend {
   }
 }
 
-/* Código JavaScript para hacer funcionar la solución en navegadores sin soporte para :has() */
-/* Se incluirá en un script inline al final de contacto.html */
+/* ====== 4. BARRA LATERAL Y COMPONENTES ====== */
 
-/* Texto introductorio del formulario */
-.intro-contacto {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: var(--text-primary);
-  text-align: center;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+/* Contenedor del mapa */
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 16px -2px #10141b5e;
+  margin-top: 0.6rem;
 }
 
-.policy-link {
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+/* Personalización de las secciones de la barra lateral */
+.sidebar-section {
+  border: 1px solid rgba(184, 193, 236, 0.2);
+  background-color: rgba(35, 41, 70, 0.3);
+  padding: 1.2rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
   color: var(--color-accent);
-  text-decoration: underline;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(184, 193, 236, 0.2);
+}
+
+.sidebar-section.info-box {
+  border-left: 4px solid var(--color-accent);
+}
+
+/* Lista de información de contacto */
+.contacto-info {
+  list-style: none;
+  padding: 0;
+  margin: 0.7rem 0;
+}
+
+.contacto-info ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.contacto-info li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(184, 193, 236, 0.2);
+}
+
+.contacto-info li:last-child {
+  border-bottom: none;
+}
+
+.contacto-info strong {
+  color: var(--color-accent);
+  margin-right: 0.5rem;
+}
+
+.contacto-info a {
+  color: var(--color-secondary);
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-.policy-link:hover {
+.contacto-info a:hover {
   color: var(--color-primary);
+  text-decoration: underline;
 }
 
-/* Ajustes para el layout */
-.museo-layout {
-  overflow: visible;
-}
+/* ====== 5. MEDIA QUERIES Y RESPONSIVIDAD ====== */
 
-.featured-section {
-  overflow: visible;
-  padding: 1.4rem 1rem;
-}
-
-/* Clase de ayuda para accesibilidad */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Media queries */
 @media (max-width: 768px) {
   .contacto-form {
     max-width: 100%;
