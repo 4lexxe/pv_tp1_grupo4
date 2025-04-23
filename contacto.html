@@ -125,15 +125,16 @@
                 </div>
               </form>
 
-              <!-- Sección de Preguntas Frecuentes oculta inicialmente -->
+              <!-- Sección de Preguntas Frecuentes -->
               <section class="faq-section" aria-labelledby="faq-heading">
                 <h2 id="faq-heading" class="contacto-heading">Preguntas frecuentes</h2>
                 <ul class="faq-list">
                   <li class="faq-item">
-                    <input type="radio" name="faq-radios" id="faq1" class="faq-toggle">
+                    <input type="checkbox" id="faq1" class="faq-toggle">
                     <label for="faq1" class="faq-question">¿Ofrecen visitas guiadas para escuelas?</label>
-                    <div class="faq-respuesta" data-titulo="Visitas guiadas para escuelas" data-id="faq1">
-                      <ol class="faq-answer">
+                    <div class="faq-answer">
+                      <h3>Visitas guiadas para escuelas</h3>
+                      <ol>
                         <li>Sí, contamos con visitas guiadas especiales para grupos escolares.</li>
                         <li>Estas visitas están adaptadas según el nivel educativo.</li>
                         <li>Están diseñadas para complementar el currículo escolar.</li>
@@ -143,10 +144,11 @@
                     </div>
                   </li>
                   <li class="faq-item">
-                    <input type="radio" name="faq-radios" id="faq2" class="faq-toggle">
+                    <input type="checkbox" id="faq2" class="faq-toggle">
                     <label for="faq2" class="faq-question">¿Se pueden tomar fotografías en los museos?</label>
-                    <div class="faq-respuesta" data-titulo="Fotografías en los museos" data-id="faq2">
-                      <ol class="faq-answer">
+                    <div class="faq-answer">
+                      <h3>Fotografías en los museos</h3>
+                      <ol>
                         <li>Se permite fotografiar sin flash en la mayoría de las salas.</li>
                         <li>Algunas exhibiciones temporales pueden tener restricciones específicas.</li>
                         <li>No se permite el uso de trípodes ni equipos profesionales sin autorización previa.</li>
@@ -155,10 +157,11 @@
                     </div>
                   </li>
                   <li class="faq-item">
-                    <input type="radio" name="faq-radios" id="faq3" class="faq-toggle">
+                    <input type="checkbox" id="faq3" class="faq-toggle">
                     <label for="faq3" class="faq-question">¿Los museos son accesibles para personas con movilidad reducida?</label>
-                    <div class="faq-respuesta" data-titulo="Accesibilidad para personas con movilidad reducida" data-id="faq3">
-                      <ol class="faq-answer">
+                    <div class="faq-answer">
+                      <h3>Accesibilidad para personas con movilidad reducida</h3>
+                      <ol>
                         <li>Sí, todos nuestros museos cuentan con rampas de acceso.</li>
                         <li>Disponemos de elevadores en todos los niveles.</li>
                         <li>Hay baños adaptados para personas con movilidad reducida.</li>
@@ -168,21 +171,17 @@
                     </div>
                   </li>
                   <li class="faq-item">
-                    <input type="radio" name="faq-radios" id="faq4" class="faq-toggle">
+                    <input type="checkbox" id="faq4" class="faq-toggle">
                     <label for="faq4" class="faq-question">¿Tienen estacionamiento disponible?</label>
-                    <div class="faq-respuesta" data-titulo="Estacionamiento disponible" data-id="faq4">
-                      <ol class="faq-answer">
+                    <div class="faq-answer">
+                      <h3>Estacionamiento disponible</h3>
+                      <ol>
                         <li>Sí, contamos con estacionamiento propio con capacidad limitada.</li>
                         <li>Se recomienda llegar temprano, especialmente en días de alta afluencia.</li>
                         <li>También hay estacionamientos públicos a una cuadra de distancia.</li>
                         <li>Los visitantes con discapacidad tienen espacios reservados cercanos a la entrada principal.</li>
                       </ol>
                     </div>
-                  </li>
-                  <!-- Botón para cerrar FAQs -->
-                  <li class="faq-item">
-                    <input type="radio" name="faq-radios" id="faq-cerrar" class="faq-toggle">
-                    <label for="faq-cerrar" class="faq-question faq-cerrar">Cerrar pregunta</label>
                   </li>
                 </ul>
               </section>
@@ -230,53 +229,17 @@
         </footer>
     </div>
 
-    <!-- Script mínimo para navegadores sin soporte de :has() -->
+    <!-- Script mínimo solo para el contador de caracteres -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Función para actualizar el área de respuestas
-        function actualizarRespuesta() {
-          // Obtener el área de respuestas
-          const areaRespuestas = document.getElementById('faq-respuestas');
-          
-          // Verificar qué pregunta está seleccionada
-          const preguntas = ['faq1', 'faq2', 'faq3', 'faq4'];
-          let preguntaSeleccionada = null;
-          
-          for (const id of preguntas) {
-            if (document.getElementById(id).checked) {
-              preguntaSeleccionada = id;
-              break;
-            }
-          }
-          
-          // Si hay una pregunta seleccionada, mostrar su contenido
-          if (preguntaSeleccionada && !document.getElementById('faq-cerrar').checked) {
-            // Obtener los datos de la pregunta
-            const respuesta = document.querySelector(`[data-id="${preguntaSeleccionada}"]`);
-            const titulo = respuesta.getAttribute('data-titulo');
-            const contenido = respuesta.innerHTML;
-            
-            // Actualizar el área de respuestas
-            areaRespuestas.innerHTML = `<h3>${titulo}</h3>${contenido}`;
-            areaRespuestas.classList.add('active');
-          } else {
-            // Si no hay pregunta seleccionada o se seleccionó cerrar, ocultar el área
-            areaRespuestas.classList.remove('active');
-            areaRespuestas.innerHTML = '';
-          }
-        }
-        
-        // Agregar evento de cambio a todos los radios
-        const radios = document.querySelectorAll('.faq-toggle');
-        radios.forEach(radio => {
-          radio.addEventListener('change', actualizarRespuesta);
-        });
-
         // Contador de caracteres para el textarea de mensaje
         const mensajeTextarea = document.getElementById('mensaje');
         const contadorElement = document.getElementById('mensaje-contador');
         
         if (mensajeTextarea && contadorElement) {
+          // Actualizar al cargar la página
+          contadorElement.textContent = `0/${mensajeTextarea.getAttribute('maxlength')} caracteres`;
+          
           mensajeTextarea.addEventListener('input', function() {
             const caracteresActuales = this.value.length;
             const caracteresMaximos = this.getAttribute('maxlength');
