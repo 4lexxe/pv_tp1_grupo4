@@ -112,6 +112,32 @@ legend {
   box-sizing: border-box;
 }
 
+/* Indicadores de campos requeridos */
+.required-field {
+  color: #ff7b54;
+  margin-left: 0.2rem;
+  font-weight: bold;
+}
+
+.form-info {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin: 0 0 1.2rem;
+  text-align: center;
+  background-color: rgba(35, 41, 70, 0.3);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #ff7b54;
+}
+
+.character-count {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
 .form-group {
   margin-bottom: 1rem;
   position: relative;

@@ -29,24 +29,26 @@
 
               <p class="intro-contacto">Complete el siguiente formulario para ponerse en contacto con nosotros. Responderemos a su consulta en un plazo máximo de 48 horas hábiles. Sus datos serán tratados conforme a nuestra <a href="#" class="policy-link">política de privacidad</a>.</p>
               <form id="formulario-contacto" class="contacto-form" action="#" method="POST" aria-labelledby="contacto-titulo">
+                <p class="form-info">Los campos marcados con <span class="required-field" aria-hidden="true">*</span> son obligatorios</p>
                 <fieldset>
                   <legend>Información personal</legend>
                   <div class="form-group">
-                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <label for="nombre" class="form-label">Nombre completo <span class="required-field" aria-hidden="true">*</span></label>
                     <input type="text" id="nombre" name="nombre" class="form-input" required 
                            pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}" 
                            placeholder="Ingrese su nombre completo"
                            title="Ingrese un nombre válido (solo letras y espacios)"
                            aria-required="true">
-                    <span class="error-message" aria-live="polite"></span>
+                    <span class="error-message" aria-live="polite" id="nombre-error"></span>
                   </div>
 
                   <div class="form-group">
-                    <label for="email" class="form-label">Correo electrónico</label>
+                    <label for="email" class="form-label">Correo electrónico <span class="required-field" aria-hidden="true">*</span></label>
                     <input type="email" id="email" name="email" class="form-input" required
                            placeholder="ejemplo@correo.com"
-                           aria-required="true">
-                    <span class="error-message" aria-live="polite"></span>
+                           aria-required="true"
+                           aria-describedby="email-error">
+                    <span class="error-message" aria-live="polite" id="email-error"></span>
                   </div>
 
                   <div class="form-group">
@@ -54,20 +56,23 @@
                     <input type="tel" id="telefono" name="telefono" class="form-input" 
                            pattern="[0-9]{10,15}" 
                            placeholder="Ej. 3884123456"
-                           title="Ingrese un número de teléfono válido">
-                    <span class="error-message" aria-live="polite"></span>
+                           title="Ingrese un número de teléfono válido"
+                           aria-describedby="telefono-error">
+                    <span class="error-message" aria-live="polite" id="telefono-error"></span>
                   </div>
                 </fieldset>
 
                 <fieldset>
                   <legend>Su mensaje</legend>
                   <div class="form-group">
-                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <label for="mensaje" class="form-label">Mensaje <span class="required-field" aria-hidden="true">*</span></label>
                     <textarea id="mensaje" name="mensaje" class="form-textarea" required 
                               minlength="10" maxlength="500"
                               placeholder="Escriba su consulta aquí..."
-                              aria-required="true"></textarea>
-                    <span class="error-message" aria-live="polite"></span>
+                              aria-required="true"
+                              aria-describedby="mensaje-error"></textarea>
+                    <span class="error-message" aria-live="polite" id="mensaje-error"></span>
+                    <span class="character-count" aria-live="polite" id="mensaje-contador">0/500 caracteres</span>
                   </div>
                 </fieldset>
 
@@ -222,6 +227,25 @@
         radios.forEach(radio => {
           radio.addEventListener('change', actualizarRespuesta);
         });
+
+        // Contador de caracteres para el textarea de mensaje
+        const mensajeTextarea = document.getElementById('mensaje');
+        const contadorElement = document.getElementById('mensaje-contador');
+        
+        if (mensajeTextarea && contadorElement) {
+          mensajeTextarea.addEventListener('input', function() {
+            const caracteresActuales = this.value.length;
+            const caracteresMaximos = this.getAttribute('maxlength');
+            contadorElement.textContent = `${caracteresActuales}/${caracteresMaximos} caracteres`;
+            
+            // Cambiar color cuando se acerca al límite
+            if (caracteresActuales > caracteresMaximos * 0.9) {
+              contadorElement.style.color = '#ff7b54';
+            } else {
+              contadorElement.style.color = '';
+            }
+          });
+        }
       });
     </script>
 </body>
