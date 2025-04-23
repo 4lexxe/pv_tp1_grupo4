@@ -202,6 +202,194 @@ legend {
   border-color: #2ecc71;
 }
 
+/* Estilos para las FAQ */
+.faq-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(35, 41, 70, 0.3);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(184, 193, 236, 0.2);
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.faq-item {
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(184, 193, 236, 0.1);
+  padding-bottom: 0.8rem;
+  position: relative;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.faq-toggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.faq-question {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  padding: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: var(--radius-sm);
+  position: relative;
+  padding-right: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-question:hover {
+  background-color: rgba(184, 193, 236, 0.1);
+  color: var(--color-accent);
+  padding-left: 0.8rem;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.faq-cerrar::after {
+  content: '×';
+}
+
+/* Ocultar las respuestas en su ubicación original */
+.faq-respuesta {
+  display: none;
+}
+
+/* Para mostrar las respuestas en el área destinada */
+.faq-respuestas {
+  display: none;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  background-color: rgba(35, 41, 70, 0.6);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(184, 193, 236, 0.3);
+  border-left: 4px solid var(--color-accent);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-respuestas.active {
+  display: block;
+}
+
+.faq-respuestas h3 {
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(184, 193, 236, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-answer {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.faq-answer li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Estilos para mostrar el contenido con CSS */
+#faq1:checked ~ [data-id="faq1"] {
+  display: none;
+}
+
+#faq2:checked ~ [data-id="faq2"] {
+  display: none;
+}
+
+#faq3:checked ~ [data-id="faq3"] {
+  display: none;
+}
+
+#faq4:checked ~ [data-id="faq4"] {
+  display: none;
+}
+
+/* Mostrar el área de respuestas cuando alguna pregunta está seleccionada */
+#faq1:checked ~ .faq-question::after,
+#faq2:checked ~ .faq-question::after,
+#faq3:checked ~ .faq-question::after,
+#faq4:checked ~ .faq-question::after {
+  content: '✓';
+}
+
+/* Funciones para mostrar las respuestas en la zona superior */
+/* Estas reglas CSS utilizan el selector :has() que no es compatible con todos los navegadores */
+/* Se agregan alternativas mediante JavaScript más adelante */
+
+@supports (selector(:has(*))) {
+  body:has(#faq1:checked) #faq-respuestas {
+    display: block;
+  }
+  
+  body:has(#faq2:checked) #faq-respuestas {
+    display: block;
+  }
+  
+  body:has(#faq3:checked) #faq-respuestas {
+    display: block;
+  }
+  
+  body:has(#faq4:checked) #faq-respuestas {
+    display: block;
+  }
+  
+  body:has(#faq-cerrar:checked) #faq-respuestas {
+    display: none;
+  }
+}
+
+/* Código JavaScript para hacer funcionar la solución en navegadores sin soporte para :has() */
+/* Se incluirá en un script inline al final de contacto.html */
+
+/* Texto introductorio del formulario */
+.intro-contacto {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policy-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.policy-link:hover {
+  color: var(--color-primary);
+}
+
 /* Ajustes para el layout */
 .museo-layout {
   overflow: visible;
